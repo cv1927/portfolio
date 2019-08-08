@@ -1,0 +1,54 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+$mat-dark-theme-background: (
+    status-bar: #393a3f,
+    app-bar:    #000000,
+    background: #000000,
+    hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+    card:       #40434a,
+    dialog:     #393a3f,
+    disabled-button: rgba(130, 157, 190, 0.103),
+    raised-button: #40434a,
+    focused-button: $white-6-opacity,
+    selected-button: #393a3f,
+    selected-disabled-button: #40434a,
+    disabled-button-toggle: map_get($mat-blue-grey, 1000),
+);
+
+$mat-dark-theme-foreground: (
+  base:              #eaedf7,
+  divider:           #565a68,
+  dividers:          #565a68,
+  disabled:          rgba(rgb(221, 225, 230), 0.3),
+  disabled-button:   rgba(rgb(221, 225, 230), 0.3),
+  disabled-text:     rgba(rgb(221, 225, 230), 0.3),
+  hint-text:         rgba(rgb(221, 225, 230), 0.3),
+  secondary-text:    #eaedf7,
+  icon:              #eaedf7,
+  icons:             #eaedf7,
+  text:              #ffffff,
+  slider-off:        rgba(153, 169, 187, 0.425),
+  slider-off-active: rgba(153, 169, 187, 0.52),
+);
+
+$dark-primary: mat-palette($mat-grey,900);
+$dark-accent : mat-palette($mat-orange, 400);
+$dark-warn : mat-palette($mat-red, 500);
+$dark-theme : mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+.dark-theme {
+    .container-app {
+        background: #000000;
+    }
+};
+@include angular-material-theme($dark-theme);
+
+$light-primary: mat-palette($mat-blue, 400);
+$light-accent: mat-palette($mat-orange, 300);
+$light-warn: mat-palette($mat-red, 500);
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+.light-theme {
+    @include angular-material-theme($dark-theme);
+
+};

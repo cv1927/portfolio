@@ -1,0 +1,23 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+}
+
+.container-app {
+    padding-top: 0;
+    height: 100vh;
+}
+
+.location-button {
+    float: right;
+}
+
+.content {
+    margin-top: 80px;
+    height: calc(100vh - 100px);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
