@@ -6,10 +6,37 @@
 
 .name-presentation {
     text-align: center;
-    margin-top: calc(100vh - 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
 }
 
 .title {
     margin-bottom: 0;
     font-size: 6vw;
+}
+
+.illustrator {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    height: 280px;
+    background: url("../../../assets/img/footergrande.png");
+    background-repeat: no-repeat;
+    background-size: calc(100vh + 65%);
+    background-position-x: center;
+}
+
+.button-social {
+    bottom: 0;
+    position: absolute;
+}
+
+.button-social button {
+    margin-right: 30px;
 }
