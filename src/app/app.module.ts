@@ -11,6 +11,8 @@ import {
   MatButtonModule,
   MatIconModule,
   MatMenuModule,
+  MatExpansionModule,
+  MatListModule
 } from '@angular/material';
 
 import { HomeComponent } from './components/home/home.component';
@@ -31,6 +33,8 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
+    MatExpansionModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

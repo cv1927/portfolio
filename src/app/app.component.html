@@ -1,33 +1,34 @@
-<div class="container-app">
+<div class="container-app" [class.example-is-mobile]="mobileQuery.matches">
   <mat-sidenav-container>
+    <mat-sidenav [opened]="!mobileQuery.matches" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" style="width: 50% !important;" [hidden]="!mobileQuery.matches">
+      <mat-nav-list>
 
-    <mat-sidenav-content>
-      <div class="navbar">
-        <mat-toolbar>
-          <button mat-button class="location-button" routerLink="/home">
+        <mat-accordion mat-list-item class="content-menu-sidebar">
+          <button mat-button class="location-sidebar-button" routerLink="/home">
             <span>HOME</span>
           </button>
-          <button mat-button class="location-button" routerLink="/about-me">
+          <button mat-button class="location-sidebar-button" routerLink="/about-me">
             <span>ABOUT ME</span>
           </button>
-          <button mat-button class="location-button">
+          <button mat-button class="location-sidebar-button">
             <span>SKILLS</span>
           </button>
-          <button mat-button class="location-button">
+          <button mat-button class="location-sidebar-button">
             <span>EXPERIENCIE</span>
           </button>
-          <button mat-button class="location-button">
+          <button mat-button class="location-sidebar-button">
             <span>EDUCATION</span>
           </button>
-          <button mat-button class="location-button">
+          <button mat-button class="location-sidebar-button">
             <span>PORTFOLIO</span>
           </button>
-          <button mat-button class="location-button">
+          <button mat-button class="location-sidebar-button">
             <span>CONTACT</span>
           </button>
-          <div>
-            <button mat-button [matMenuTriggerFor]="app_menu" class="button-menu" class="location-button">
-              <mat-icon class="material-icons-round menu-item-icon-head">more_vert</mat-icon>
+          <div class="button-config">
+            <button mat-button [matMenuTriggerFor]="app_menu" class="button-menu" >
+              <mat-icon class="material-icons-round menu-item-icon-head">settings</mat-icon>
             </button>
             <mat-menu #app_menu="matMenu" xPosition="before">
               <button mat-menu-item>
@@ -35,6 +36,56 @@
                 <span>DARK THEME</span>
               </button>
               <button mat-menu-item>
+                <mat-icon class="material-icons-round">brightness_5</mat-icon>
+                <span>LIGHT THEME</span>
+              </button>
+            </mat-menu>
+          </div>
+
+
+        </mat-accordion>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="navbar">
+        <mat-toolbar>
+          <button class="button-menu" mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <div class="menu-desktop">
+            <button mat-button class="location-button" routerLink="/home">
+              <span>HOME</span>
+            </button>
+            <button mat-button class="location-button" routerLink="/about-me">
+              <span>ABOUT ME</span>
+            </button>
+            <button mat-button class="location-button">
+              <span>SKILLS</span>
+            </button>
+            <button mat-button class="location-button">
+              <span>EXPERIENCIE</span>
+            </button>
+            <button mat-button class="location-button">
+              <span>EDUCATION</span>
+            </button>
+            <button mat-button class="location-button">
+              <span>PORTFOLIO</span>
+            </button>
+            <button mat-button class="location-button">
+              <span>CONTACT</span>
+            </button>
+
+            <button mat-button [matMenuTriggerFor]="app_menu" class="location-button">
+              <mat-icon class="material-icons-round menu-item-icon-head">more_vert</mat-icon>
+            </button>
+            <mat-menu #app_menu="matMenu" xPosition="before">
+              <button mat-menu-item (click)="onSetTheme('dark-theme')">
+                <mat-icon class="material-icons-round">brightness_4</mat-icon>
+                <span>DARK THEME</span>
+              </button>
+              <button mat-menu-item (click)="onSetTheme('light-theme')">
                 <mat-icon class="material-icons-round">brightness_5</mat-icon>
                 <span>LIGHT THEME</span>
               </button>

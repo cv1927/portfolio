@@ -33,11 +33,43 @@ $mat-dark-theme-foreground: (
   slider-off-active: rgba(153, 169, 187, 0.52),
 );
 
+$mat-light-theme-background: (
+    status-bar: #e9e8e8,
+    app-bar:    #d8d8d8,
+    background: #d8d8d8,
+    hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+    card:       #e9e8e8,
+    dialog:     #e9e8e8,
+    disabled-button: rgba(130, 157, 190, 0.103),
+    raised-button: #40434a,
+    focused-button: $white-6-opacity,
+    selected-button: #e9e8e8,
+    selected-disabled-button: #e9e8e8,
+    disabled-button-toggle: map_get($mat-blue-grey, 1000),
+);
+
+$mat-light-theme-foreground: (
+  base:              #eaedf7,
+  divider:           #e9e8e8,
+  dividers:          #e9e8e8,
+  disabled:          rgba(rgb(221, 225, 230), 0.3),
+  disabled-button:   rgba(rgb(221, 225, 230), 0.3),
+  disabled-text:     rgba(rgb(221, 225, 230), 0.3),
+  hint-text:         rgba(rgb(221, 225, 230), 0.3),
+  secondary-text:    #000000,
+  icon:              #000000,
+  icons:             #000000,
+  text:              #000000,
+  slider-off:        rgba(153, 169, 187, 0.425),
+  slider-off-active: rgba(153, 169, 187, 0.52),
+);
+
 $dark-primary: mat-palette($mat-grey,900);
 $dark-accent : mat-palette($mat-orange, 400);
 $dark-warn : mat-palette($mat-red, 500);
 $dark-theme : mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .dark-theme {
+    @include angular-material-theme($dark-theme);
     .container-app {
         background: #000000;
     }
@@ -49,6 +81,21 @@ $light-accent: mat-palette($mat-orange, 300);
 $light-warn: mat-palette($mat-red, 500);
 $light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
 .light-theme {
-    @include angular-material-theme($dark-theme);
+    @include angular-material-theme($light-theme);
+    .container-app {
+        background: #ffffff;
+    }
 
+    .button-round-facebook {
+        color: #ffffff !important;
+    }
+
+    .button-round-instagram {
+        color: #ffffff !important;
+    }
+
+    .button-round-github {
+        background: #000000 !important ;
+        color: #ffffff !important;
+    }
 };

@@ -21,6 +21,16 @@
     font-size: 6vw;
 }
 
+@media (max-width: 400px) {
+    .title {
+        font-size: 9vw !important;
+    }
+
+    .sub-title {
+        font-size: 7vw !important;
+    }
+}
+
 .illustrator {
     bottom: 0;
     width: 100%;
@@ -30,6 +40,12 @@
     background-repeat: no-repeat;
     background-size: calc(100vh + 65%);
     background-position-x: center;
+}
+
+@media (max-width: 700px) {
+    .illustrator {
+        height: 200px;
+    }
 }
 
 .button-social {
