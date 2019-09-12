@@ -71,7 +71,27 @@ $dark-theme : mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .dark-theme {
     @include angular-material-theme($dark-theme);
     .container-app {
-        background: #000000;
+        background: #000000 !important;
+    }
+
+    .content-about .title-about {
+        color: #000000 !important;
+    }
+
+    .content-about .circle-one {
+        background-color: #ffffffe3 !important;
+    }
+
+    .content-about .circle-two {
+        background-color: #ffffff9e !important;
+    }
+
+    .container-app .content-about {
+        background-color: #ffffff !important;
+    }
+
+    .description-about {
+        color: black !important;
     }
 };
 @include angular-material-theme($dark-theme);
@@ -98,4 +118,50 @@ $light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
         background: #000000 !important ;
         color: #ffffff !important;
     }
+
+    .title-about {
+        color: #ffffff !important;
+    }
+
+    .circle-one {
+        background-color: #353535e3 !important;
+    }
+
+    .circle-two {
+        background-color: #1715159e !important;
+    }
+
+    .container-app .content-about {
+        background-color: #1d1d1d !important;
+    }
+
+    .description-about {
+        color: #ffffff !important;
+    }
 };
+
+:root {
+    .container-app {
+        background: #000000;
+    }
+
+    .content-about .title-about {
+        color: #000000;
+    }
+
+    .content-about .circle-one {
+        background-color: #ffffffe3;
+    }
+
+    .content-about .circle-two {
+        background-color: #ffffff9e;
+    }
+
+    .container-app .content-about {
+        background-color: #ffffff;
+    }
+    
+    .description-about {
+        color: black;
+    }
+}

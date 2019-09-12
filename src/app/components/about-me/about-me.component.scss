@@ -1,0 +1,40 @@
+.content-about {
+    width: 80%;
+    height: 70%; 
+    position: absolute;
+    left: 0;
+    top: calc(100% - 80%);
+    border-radius: 0px 360px 360px 0px;
+}
+
+.circle-one {
+    z-index: -1;
+    width: 835px;
+    height: 800px;
+    position: absolute;
+    top: -70px;
+    right: calc(100% - 110%);
+    border-radius: 50%;
+    box-shadow: 12px 0px 30px 35px rgba(132, 186, 227, 0.53);
+}
+
+.circle-two {
+    z-index: -2;
+    width: 940px;
+    height: 880px;
+    position: absolute;
+    top: -110px;
+    right: calc(100% - 119%);
+    border-radius: 50%;
+}
+
+.title-about {
+    font-size: 30px;
+    padding-left: 18px;
+}
+
+.description-about {
+    width: 70%;
+    text-align: justify;
+    padding-left: 18px;
+}
